@@ -18,7 +18,7 @@ def getImage(url, name):
   im.save(name)
 
 df = pd.read_csv("photos.csv")
-df_subset = df[:][:750]
+df_subset = df[:][750:1000]
 
 for url, name in zip(list(df_subset["photo_image_url"]), list(df_subset["photo_id"])):
-  getImage(url, "photos/" + name+".jpg")
+  getImage(url, "test/" + name+".jpg")
