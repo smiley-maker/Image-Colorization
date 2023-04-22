@@ -7,7 +7,6 @@ def getImage(url, name):
     response = requests.get(url, stream=True)
     if not response.ok:
       print(response)
-      return response
     for block in response.iter_content(1024):
       if not block: break
       img.write(block)
@@ -18,7 +17,8 @@ def getImage(url, name):
   im.save(name)
 
 df = pd.read_csv("photos.csv")
-df_subset = df[:][750:1000]
+df_subset = df[:][7351:7351+120]
 
+print("running")
 for url, name in zip(list(df_subset["photo_image_url"]), list(df_subset["photo_id"])):
-  getImage(url, "test/" + name+".jpg")
+  getImage(url, "photos/test/test_data/" + name+".jpg")
