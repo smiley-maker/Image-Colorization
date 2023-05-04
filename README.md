@@ -1,2 +1,2 @@
 # Image-Colorization
-Uses deep learning to add colors to black and white photographs. 
+I hope to experiment with different deep learning techniques to determine which combination is best for colorization of black and white photographs. This is still a work in progress, but so far I have tried both convolutional neural networks and convolutional autoencoders with some success using different setups and loss functions. Next I will implement a loss function that I saw in a few papers that essentially breaks the color space into regions, and assigns each pixel of an image to one of those regions. The loss is then based on the distance from the correct region that the prediction one was. 
