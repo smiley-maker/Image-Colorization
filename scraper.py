@@ -17,7 +17,8 @@ def getImage(url, name):
   im.save(name)
 
 df = pd.read_csv("photos.csv")
-df_subset = df[:][7351:7351+120]
+df = df.sample(frac=1).reset_index(drop=True)
+df_subset = df[:][9000+2508:9000+2510]
 
 print("running")
 for url, name in zip(list(df_subset["photo_image_url"]), list(df_subset["photo_id"])):
